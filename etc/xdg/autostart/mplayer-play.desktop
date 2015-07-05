@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Mplayer Daemon
+Comment=Play movieclip at fullscreen
+Exec=/home/olimex/kkiosk/play.sh
+Terminal=false
+Type=Application
+OnlyShowIn=LXDE;OPENBOX;GNOME;
+AutostartCondition=GNOME3 unless-session gnome
