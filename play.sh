@@ -1,4 +1,7 @@
 #!/bin/bash
-DISPLAY=:0.0
+export DISPLAY=:0.0
 
-/usr/bin/mplayer /home/olimex/clip/Desislava\ -\ Moito\ zaiche\ \(2014\)\ FULL\ HD.mp4 
+CLIPFILE=`find /home/olimex/clip/ -type f | head -1`
+
+/usr/bin/mplayer "$CLIPFILE" -fs -loop 0
+
