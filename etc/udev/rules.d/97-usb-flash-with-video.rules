@@ -1,0 +1,6 @@
+# Play Video with mplayer when usb flash is removed
+
+ACTION=="add", KERNEL=="sd*[!0-9]", ATTR{removable}=="1", ENV{ID_BUS}=="usb", ENV{DEVTYPE}=="disk", RUN+="/usr/bin/sudo su - olimex -c '/home/olimex/kkiosk/usb_add_hook.sh'" 
+
+ACTION=="remove", ENV{ID_BUS}=="usb", ENV{DEVTYPE}=="disk", RUN+="/usr/bin/sudo su - olimex -c '/home/olimex/kkiosk/play.sh'"
+

@@ -3,13 +3,12 @@
 #CLEANUP
 /usr/bin/pkill -9 -f mplayer
 /bin/rm -rf /home/olimex/clip
-
-#Find clip DIR on USB Media
-USBCLIPDIR=`find /media /mnt -type d -name 'clip' | head -1`
-
+echo '#> Old clip removed, waiting for 10 sec until usb media is ready ...'
+sleep 10
+USBCLIPDIR=`/usr/bin/find /media /mnt -type d -name "clip" | head -1` 
+echo '#> Found: '$USBCLIPDIR
+sleep 3
 /usr/bin/rsync -aP "$USBCLIPDIR" /home/olimex
-
-/bin/sleep 3
-
-/home/olimex/kkiosk/play.sh
+echo '#> File transfer compleated, Remove media usb disk ...'
+sleep 10
 
